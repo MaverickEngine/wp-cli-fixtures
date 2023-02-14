@@ -123,13 +123,13 @@ class Command extends WP_CLI_Command
             }
 
             $class   = sprintf('%s\Entity\%s', __NAMESPACE__, ucfirst($type));
-            $confirm = WP_CLI::confirm(sprintf('Are you sure you want to delete all %s fixtures?', $type), $assoc_args);
+            // $confirm = WP_CLI::confirm(sprintf('Are you sure you want to delete all %s fixtures?', $type), $assoc_args);
             $class::delete();
 
             return;
         }
 
-        $confirm = WP_CLI::confirm('Are you sure you want to delete all fixtures?');
+        // $confirm = WP_CLI::confirm('Are you sure you want to delete all fixtures?');
 
         foreach ($valid_types as $type) {
             $class = sprintf('%s\Entity\%s', __NAMESPACE__, ucfirst($type));
