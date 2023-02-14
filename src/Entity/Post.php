@@ -84,7 +84,7 @@ class Post extends Entity
                 }
 
                 // Add terms
-                $tt_ids = wp_set_object_terms($post_id, $terms, $taxonomy);
+                $tt_ids = wp_set_object_terms($this->ID, $terms, $taxonomy);
 
                 // Add fake flag to created terms
                 // foreach ($terms as $term) {
@@ -108,7 +108,7 @@ class Post extends Entity
                 if (!$field) {
                     continue;
                 }
-                update_field($field['key'], $value, $post_id);
+                update_field($field['key'], $value, $this->ID);
             }
         }
         
